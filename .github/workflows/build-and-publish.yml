@@ -15,7 +15,7 @@ jobs:
       packages: write
       attestations: write
       id-token: write
-    uses: rsa-2026/od-octocat-supply-workflows/.github/workflows/build-publish-containers.yml@main
+    uses: octobooth/octocat-supply-reusable-workflows/.github/workflows/build-publish-containers.yml@main
     if: |
       github.actor != 'dependabot[bot]' && 
       !startsWith(github.head_ref, 'dependabot/')
@@ -32,7 +32,7 @@ jobs:
       packages: write
       attestations: write
       id-token: write
-    uses: rsa-2026/od-octocat-supply-workflows/.github/workflows/build-publish-containers.yml@main
+    uses: octobooth/octocat-supply-reusable-workflows/.github/workflows/build-publish-containers.yml@main
     if: |
       github.actor != 'dependabot[bot]' && 
       !startsWith(github.head_ref, 'dependabot/')

@@ -45,9 +45,42 @@ env:
 
 
 jobs:
+  verify-attestations:
+    name: Verify Artifact Attestations
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      attestations: read
+      packages: read
+    steps:
+      - name: Verify API image attestation
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🔍 Verifying attestation for API image..."
+          echo "   Image: ${{ env.REGISTRY_HOSTNAME }}/${{ github.repository }}-${{ inputs.api_name }}"
+          echo "   Digest: ${{ inputs.api_digest }}"
+          gh attestation verify \
+            "oci://${{ env.REGISTRY_HOSTNAME }}/${{ github.repository }}-${{ inputs.api_name }}@${{ inputs.api_digest }}" \
+            --owner "${{ github.repository_owner }}"
+          echo "✅ API image attestation verified"
+
+      - name: Verify Frontend image attestation
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🔍 Verifying attestation for Frontend image..."
+          echo "   Image: ${{ env.REGISTRY_HOSTNAME }}/${{ github.repository }}-${{ inputs.frontend_name }}"
+          echo "   Digest: ${{ inputs.frontend_digest }}"
+          gh attestation verify \
+            "oci://${{ env.REGISTRY_HOSTNAME }}/${{ github.repository }}-${{ inputs.frontend_name }}@${{ inputs.frontend_digest }}" \
+            --owner "${{ github.repository_owner }}"
+          echo "✅ Frontend image attestation verified"
+
   deploy:
     name: Azure deployment disabled
     runs-on: ubuntu-latest
+    needs: [verify-attestations]
 
     steps:
       - name: Deployment disabled
