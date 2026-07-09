@@ -45,6 +45,12 @@ export default function Navigation() {
               >
                 About us
               </Link>
+              <Link
+                to="/tictactoe"
+                className={`${darkMode ? 'text-light hover:text-primary' : 'text-gray-700 hover:text-primary'} px-3 py-2 rounded-md text-sm font-medium transition-colors`}
+              >
+                Tic-Tac-Toe
+              </Link>
               {isAdmin && (
                 <div className="relative">
                   <button

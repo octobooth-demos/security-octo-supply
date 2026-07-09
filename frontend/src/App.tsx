@@ -9,6 +9,7 @@ import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import AdminProducts from './components/admin/AdminProducts';
 import { useTheme } from './context/ThemeContext';
+import TicTacToe from './components/TicTacToe';
 
 // Wrapper component to apply theme classes
 function ThemedApp() {
@@ -26,6 +27,7 @@ function ThemedApp() {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Products />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/tictactoe" element={<TicTacToe />} />
             <Route path="/admin/products" element={<AdminProducts />} />
           </Routes>
         </main>
