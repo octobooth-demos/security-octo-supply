@@ -22,6 +22,7 @@ permissions:
   actions: read
   issues: read
   pull-requests: read
+  copilot-requests: write
 tracker-id: auto-analyze-build-failures
 tools:
   github:

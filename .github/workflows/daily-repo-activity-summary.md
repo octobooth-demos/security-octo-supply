@@ -8,6 +8,7 @@ permissions:
   issues: read
   pull-requests: read
   metadata: read
+  copilot-requests: write
 safe-outputs:
   create-issue:
     title-prefix: "[daily activity] "
