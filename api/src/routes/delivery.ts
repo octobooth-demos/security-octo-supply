@@ -224,6 +224,39 @@ router.put('/:id/status', async (req, res, next) => {
   }
 });
 
+// Update the status of a delivery
+router.put('/:id/status-delivery', async (req, res, next) => {
+  try {
+    const { status, deliveryPartner } = req.body;
+    const repo = await getDeliveriesRepository();
+    const delivery = await repo.findById(parseInt(req.params.id));
+
+    if (delivery) {
+      const updatedDelivery = await repo.updateStatus(parseInt(req.params.id), status);
+
+      if (deliveryPartner) {
+        exec(`notify ${deliveryPartner}`, (error, stdout) => {
+          if (error) {
+            console.error(`Error executing command: ${error}`);
+            return res.status(500).json({ error: error.message });
+          }
+          res.json({ delivery: updatedDelivery, commandOutput: stdout });
+        });
+      } else {
+        res.json(updatedDelivery);
+      }
+    } else {
+      res.status(404).send('Delivery not found');
+    }
+  } catch (error) {
+    if (error instanceof NotFoundError) {
+      res.status(404).send('Delivery not found');
+    } else {
+      next(error);
+    }
+  }
+});
+
 // Update a delivery by ID
 router.put('/:id', async (req, res, next) => {
   try {
