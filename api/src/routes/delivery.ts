@@ -141,13 +141,15 @@
  *                       description: Output from the notify-service command
  *       404:
  *         description: Delivery not found
+ *       400:
+ *         description: Invalid delivery partner
  *       500:
  *         description: Error executing notify command
  */
 
 import express from 'express';
 import { Delivery } from '../models/delivery';
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 import { getDeliveriesRepository } from '../repositories/deliveriesRepo';
 import { NotFoundError } from '../utils/errors';
 
@@ -195,6 +197,10 @@ router.get('/:id', async (req, res, next) => {
 router.put('/:id/status', async (req, res, next) => {
   try {
     const { status, deliveryPartner } = req.body;
+    if (deliveryPartner !== undefined && typeof deliveryPartner !== 'string') {
+      return res.status(400).json({ error: 'deliveryPartner must be a string' });
+    }
+
     const repo = await getDeliveriesRepository();
     const delivery = await repo.findById(parseInt(req.params.id));
 
@@ -202,7 +208,7 @@ router.put('/:id/status', async (req, res, next) => {
       const updatedDelivery = await repo.updateStatus(parseInt(req.params.id), status);
 
       if (deliveryPartner) {
-        exec(`notify ${deliveryPartner}`, (error, stdout) => {
+        execFile('notify', [deliveryPartner], { shell: false }, (error, stdout) => {
           if (error) {
             console.error(`Error executing command: ${error}`);
             return res.status(500).json({ error: error.message });
