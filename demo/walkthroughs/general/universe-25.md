@@ -410,7 +410,7 @@ Forcing CCA to deterministically produce a finding can be tough. The way to go a
 The new AI Control Plane is an enterprise-level settings page that unifies the monitoring and management of AI-related features across an organization. It combines existing features, like policy and access control, with new capabilities such as Agent Rulesets.
 
 > [!NOTE]
-> You can only demo this if you have access to an enterprise administration account. For GitHub employees, this is <https://github.com/enterprises/octodemo>.
+> You can only demo this if you have access to an enterprise administration account (`https://github.com/enterprises/<your-enterprise>`).
 
 > [!IMPORTANT]
 > **READ-ONLY DEMO**: Given that changing anything in the enterprise settings can be severely disruptive to all organizations and users, please refrain from demoing any configuration changes in this section. This is a read-only demo.

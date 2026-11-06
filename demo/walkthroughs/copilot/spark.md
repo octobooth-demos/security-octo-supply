@@ -82,7 +82,7 @@ The Spark app in this demo is a logistics overview and tracking dashboard for th
 
 1. Click **Publish** and adjust visibility controls
 2. Highlight that Spark runs on secure environments in Azure — nothing to install or maintain.
-3. (optional) Use the example published app in the About section of <https://github.com/octodemo-framework/content_octocat_supply_order_tracking_prototype>
+3. (optional) Open a Spark app you published earlier to show what a shared prototype looks like to stakeholders.
 
 > [!NOTE]
 > Collaboration stays native to GitHub — PMs, engineers, and designers all iterate together without switching tools.
