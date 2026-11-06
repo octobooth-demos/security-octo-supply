@@ -170,7 +170,7 @@ import { Delivery } from '../models/delivery';
 // data, always prefer `execFile` (or `spawn` with `shell: false`, the default)
 // over `exec`.  Reserve `exec` only for fully trusted, hard-coded commands that
 // never contain user input.
-import { execFile } from 'child_process';
+import { exec, execFile } from 'child_process';
 // ✅ SECURITY FIX: Import rateLimit to protect the endpoint that spawns a
 // subprocess from being abused.
 //

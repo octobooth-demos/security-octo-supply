@@ -17,6 +17,8 @@ on:
     types: [completed]
     branches:
       - main
+# Skip runs triggered by fork PRs so outside contributors can't spend Copilot requests on untrusted logs.
+if: github.event.workflow_run.conclusion == 'failure' && github.event.workflow_run.head_repository.full_name == github.repository
 permissions:
   contents: read
   actions: read
