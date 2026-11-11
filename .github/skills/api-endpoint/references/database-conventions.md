@@ -71,7 +71,7 @@ CREATE INDEX IF NOT EXISTS idx_inventory_branch ON inventory(branch_id);
 
 | TypeScript | SQLite Type | Notes |
 |------------|-------------|-------|
-| `number` | `INTEGER` | All numeric values |
+| `number` | `INTEGER` | Integer values |
 | `number` (decimal) | `REAL` | Floating point |
 | `string` | `TEXT` | Strings and dates |
 | `boolean` | `INTEGER` | 0 = false, 1 = true |
