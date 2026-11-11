@@ -8,7 +8,7 @@ This document details SQLite database conventions for the OctoCAT Supply Chain A
 api/
 ├── data/
 │   └── app.db              # SQLite database file (gitignored)
-└── sql/
+└── database/
     ├── migrations/         # Schema changes
     │   ├── 001_init.sql
     │   └── 002_add_supplier_status_fields.sql
