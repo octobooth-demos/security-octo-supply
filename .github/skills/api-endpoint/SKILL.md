@@ -352,7 +352,7 @@ See `references/database-conventions.md` for migration file conventions.
 
 ### Step 6: Create Seed Data
 
-**Always create seed data** for new entities in `api/sql/seed/{NNN}_{entity_names}.sql`.
+**Always create seed data** for new entities in `api/database/seed/{NNN}_{entity_names}.sql`.
 
 **Seed file naming convention:**
 - Use the next sequential number (e.g., `005_categories.sql`)
