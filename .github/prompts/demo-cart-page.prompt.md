@@ -24,7 +24,7 @@ Implement a complete Cart system including:
 6. Remove the alert message when adding items to the cart
 
 ## Design Reference
-Use the provided cart design image (../docs/design/cart.png) as the visual reference for implementation. The design shows:
+Use the provided cart design image (../../docs/design/cart.png) as the visual reference for implementation. The design shows:
 - A clean, modern cart interface
 - Item list with product images and names
 - Quantity controls (+/- buttons)
@@ -35,8 +35,8 @@ Use the provided cart design image (../docs/design/cart.png) as the visual refer
 ## Technical Requirements
 
 ### Frontend Architecture and Building
-- Refer to the existing Architecture Doc (../docs/architecture.md) for frontend structure
-- Refere to the Building Doc (../docs/building.md) for build instructions
+- Refer to the existing Architecture Doc (../../docs/architecture.md) for frontend structure
+- Refere to the Building Doc (../../docs/build.md) for build instructions
 
 ### Implementation Specifications
 1. **Cart Context**: Create a CartContext to manage cart state globally

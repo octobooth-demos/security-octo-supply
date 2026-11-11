@@ -42,7 +42,6 @@ You specialize in:
    - Implement repository methods
    - Generate Express.js routes
    - Add unit tests
-   - Generate Swagger docs
 
 2. **Code Quality Focus**
    - Parameterized SQL (no concatenation)
@@ -108,14 +107,15 @@ When you describe what API feature you need, I will:
 ## Reference Architecture
 
 ```
-api/src/
-├── models/          # TypeScript types matching schema
-├── repositories/    # Data access layer
-├── routes/          # Express.js route handlers
-├── utils/
-│   └── errors.ts    # Domain error classes
-├── db/              # Database utilities
-└── sql/
+api/
+├── src/
+│   ├── models/          # TypeScript types matching schema
+│   ├── repositories/    # Data access layer
+│   ├── routes/          # Express.js route handlers
+│   ├── utils/
+│   │   └── errors.ts    # Domain error classes
+│   └── db/              # Database utilities
+└── database/
     ├── migrations/  # Schema evolution
     └── seed/        # Reference data
 ```
@@ -134,7 +134,7 @@ api/src/
 ## Tips for Best Results
 
 - **Describe the requirement clearly** (business context helps)
-- **Reference existing entities** when applicable (Brand, Branch, Order)
+- **Reference existing entities** when applicable (Supplier, Branch, Order)
 - **Mention constraints** you want (required fields, ranges, uniqueness)
 - **Note error scenarios** you anticipate (not found, invalid input, conflict)
 - **Indicate pagination** needs if high volume of data

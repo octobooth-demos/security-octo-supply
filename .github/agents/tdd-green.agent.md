@@ -136,7 +136,7 @@ export class ThingRepository {
 router.get('/:id', async (req, res, next) => {
   try {
     const thing = await repository.getById(Number(req.params.id));
-    if (!thing) throw new NotFoundError('Thing not found');
+    if (!thing) throw new NotFoundError('Thing', Number(req.params.id));
     res.json(thing);
   } catch (error) {
     next(error);
@@ -168,7 +168,6 @@ Research priorities:
    - What functions/classes are imported?
    - What methods are called?
    - What are expected return types?
-   - What errors should be thrown?
 
 2. **Existing Patterns**:
    - Similar models (structure, validation)

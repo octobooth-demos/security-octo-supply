@@ -240,6 +240,7 @@ import request from 'supertest';
 import express from 'express';
 import entityNameRoutes from './entityName';
 import * as repo from '../repositories/entityNamesRepo';
+import { NotFoundError } from '../utils/errors';
 
 vi.mock('../repositories/entityNamesRepo');
 

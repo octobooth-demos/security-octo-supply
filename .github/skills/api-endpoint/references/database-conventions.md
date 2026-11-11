@@ -8,7 +8,7 @@ This document details SQLite database conventions for the OctoCAT Supply Chain A
 api/
 ├── data/
 │   └── app.db              # SQLite database file (gitignored)
-└── sql/
+└── database/
     ├── migrations/         # Schema changes
     │   ├── 001_init.sql
     │   └── 002_add_supplier_status_fields.sql
@@ -53,11 +53,10 @@ CREATE INDEX IF NOT EXISTS idx_inventory_branch ON inventory(branch_id);
 
 ### Key Conventions
 
-1. **Always use IF NOT EXISTS** - Makes migrations idempotent
-2. **INTEGER PRIMARY KEY AUTOINCREMENT** - Standard for auto-incrementing IDs
-3. **Foreign keys** - Always define with REFERENCES clause
-4. **Indexes** - Create for foreign keys and frequently queried columns
-5. **Defaults** - Use SQLite functions like `datetime('now')` for timestamps
+1. **INTEGER PRIMARY KEY AUTOINCREMENT** - Standard for auto-incrementing IDs
+2. **Foreign keys** - Always define with REFERENCES clause
+3. **Indexes** - Create for foreign keys and frequently queried columns
+4. **Defaults** - Use SQLite functions like `datetime('now')` for timestamps
 
 ## Column Naming
 
@@ -72,7 +71,7 @@ CREATE INDEX IF NOT EXISTS idx_inventory_branch ON inventory(branch_id);
 
 | TypeScript | SQLite Type | Notes |
 |------------|-------------|-------|
-| `number` | `INTEGER` | All numeric values |
+| `number` | `INTEGER` | Integer values |
 | `number` (decimal) | `REAL` | Floating point |
 | `string` | `TEXT` | Strings and dates |
 | `boolean` | `INTEGER` | 0 = false, 1 = true |
@@ -222,7 +221,7 @@ throw new ValidationError('Invalid reference to related entity');
 
 ## Adding a New Table
 
-1. Create migration: `api/sql/migrations/00X_add_table_name.sql`
-2. Create seed (if needed): `api/sql/seed/00X_table_name.sql`
+1. Create migration: `api/database/migrations/00X_add_table_name.sql`
+2. Create seed (if needed): `api/database/seed/00X_table_name.sql`
 3. Restart API to run migrations
 4. Create model, repository, and routes following skill patterns

@@ -32,8 +32,8 @@ Implement a complete Cart system including:
 6. Assign the Copilot Agent to each sub-issue to implement the design in parallel.
 
 ### Frontend Architecture and Building
-- Refer to the existing Architecture Doc (../docs/architecture.md) for frontend structure
-- Refere to the Building Doc (../docs/building.md) for build instructions
+- Refer to the existing Architecture Doc (../../docs/architecture.md) for frontend structure
+- Refere to the Building Doc (../../docs/build.md) for build instructions
 
 ### Implementation Specifications
 1. **Cart Context**: Create a CartContext to manage cart state globally

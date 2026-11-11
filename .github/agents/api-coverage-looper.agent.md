@@ -80,7 +80,7 @@ When the subagents complete reporting on the newly covered routes. Then, regardl
 
 ## 5. Loop Completion
 
-When ALL routes have corresponding test files do a final report of the coverage status and STOP the loop, congratulating the user on achieving full test coverage.
+When ALL routes have corresponding test files do a final report of the coverage status and STOP the loop, reporting that each route has a corresponding test file.
 
 Do NOT hand off when complete — report success and stop.
 </workflow>

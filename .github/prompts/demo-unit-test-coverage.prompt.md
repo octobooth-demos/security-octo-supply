@@ -4,11 +4,6 @@ tools: ['search', 'edit', 'web','vscode/openSimpleBrowser', 'read', 'execute', '
 ---
 # 🧪 Demo: Add Unit Tests for Product and Supplier Routes
 
-## 📊 Current State
-
-- Only **1 test file exists**: `branch.test.ts`
-
-
 ## 🎯 Objective
 Increase API test coverage by implementing comprehensive unit tests for Product and Supplier routes.
 
@@ -18,8 +13,8 @@ Increase API test coverage by implementing comprehensive unit tests for Product 
 The following route files need complete test coverage:
 
 
-- [ ] `src/routes/product.test.ts`
-- [ ] `src/routes/supplier.test.ts`
+- [ ] `api/src/routes/product.test.ts`
+- [ ] `api/src/routes/supplier.test.ts`
 
 
 ## ✅ Test Coverage Requirements
@@ -43,7 +38,7 @@ The following route files need complete test coverage:
 
 ### Use Existing Pattern
 
-Follow the pattern established in `src/routes/branch.test.ts`:
+Follow the pattern established in `api/src/routes/branch.test.ts`:
 ```typescript
 import { describe, it, expect, beforeEach } from 'vitest';
 import request from 'supertest';
@@ -72,13 +67,13 @@ describe('[Entity] API', () => {
 
 ```bash
 # Run all tests
-npm run test:api
+npm --prefix api test -- --run
 
 # Run tests with coverage
-npm run test:api -- -- --coverage
+npm --prefix api run test:coverage
 
 # Run specific test file
-npm run test:api -- src/routes/product.test.ts
+npm --prefix api test -- --run src/routes/product.test.ts
 ```
 
 
