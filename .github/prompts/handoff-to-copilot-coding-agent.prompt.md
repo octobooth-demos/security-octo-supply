@@ -72,7 +72,7 @@ INTERNAL THOUGHTS – not shown to the user.
 
 ## 6. Success Criteria
 <!-- How do we know when this task is complete? -->
-- [ ] All unit tests pass (`npm run test:api`)
+- [ ] All unit tests pass (`npm --prefix api test -- --run`)
 - [ ] Code builds without errors (`npm run build`)
 - [ ] Feature works as described in acceptance criteria
 - [ ] Documentation is updated
