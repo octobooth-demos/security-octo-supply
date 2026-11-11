@@ -134,7 +134,7 @@ api/
 ## Tips for Best Results
 
 - **Describe the requirement clearly** (business context helps)
-- **Reference existing entities** when applicable (Brand, Branch, Order)
+- **Reference existing entities** when applicable (Supplier, Branch, Order)
 - **Mention constraints** you want (required fields, ranges, uniqueness)
 - **Note error scenarios** you anticipate (not found, invalid input, conflict)
 - **Indicate pagination** needs if high volume of data
