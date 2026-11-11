@@ -67,7 +67,7 @@ describe('[Entity] API', () => {
 
 ```bash
 # Run all tests
-npm run test:api
+npm --prefix api test -- --run
 
 # Run tests with coverage
 npm run test:api -- -- --coverage
