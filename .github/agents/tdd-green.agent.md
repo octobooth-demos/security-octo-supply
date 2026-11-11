@@ -168,7 +168,6 @@ Research priorities:
    - What functions/classes are imported?
    - What methods are called?
    - What are expected return types?
-   - What errors should be thrown?
 
 2. **Existing Patterns**:
    - Similar models (structure, validation)
