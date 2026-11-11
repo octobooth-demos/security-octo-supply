@@ -89,40 +89,6 @@ throw new ConflictError('Supplier with this email already exists');
 // → "Conflict: Supplier with this email already exists" (409)
 ```
 
-## handleDatabaseError Function
-
-Central error handler that converts SQLite-specific errors to appropriate types.
-
-```typescript
-export function handleDatabaseError(error: unknown, entity?: string, id?: string | number): never {
-  // Re-throw if already a DatabaseError
-  if (error instanceof DatabaseError) {
-    throw error;
-  }
-
-  const message = error instanceof Error ? error.message : error;
-
-  // SQLite constraint violations
-  if (error.code === 'SQLITE_CONSTRAINT') {
-    if (error.message.includes('UNIQUE')) {
-      throw new ConflictError('Resource already exists');
-    }
-    if (error.message.includes('FOREIGN KEY')) {
-      throw new ValidationError('Invalid reference to related entity');
-    }
-    throw new ValidationError(error.message);
-  }
-
-  // SQLite busy/locked
-  if (error.code === 'SQLITE_BUSY') {
-    throw new DatabaseError('Database is temporarily unavailable', 'DATABASE_BUSY', 503);
-  }
-
-  // Default
-  throw new DatabaseError(`Database operation failed: ${message}`, 'DATABASE_ERROR', 500);
-}
-```
-
 ## Usage in Repository Methods
 
 Always wrap database calls in try/catch:
