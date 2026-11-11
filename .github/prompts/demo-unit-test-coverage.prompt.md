@@ -13,7 +13,7 @@ Increase API test coverage by implementing comprehensive unit tests for Product 
 The following route files need complete test coverage:
 
 
-- [ ] `src/routes/product.test.ts`
+- [ ] `api/src/routes/product.test.ts`
 - [ ] `src/routes/supplier.test.ts`
 
 
