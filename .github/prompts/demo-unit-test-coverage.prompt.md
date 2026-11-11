@@ -14,7 +14,7 @@ The following route files need complete test coverage:
 
 
 - [ ] `api/src/routes/product.test.ts`
-- [ ] `src/routes/supplier.test.ts`
+- [ ] `api/src/routes/supplier.test.ts`
 
 
 ## ✅ Test Coverage Requirements
