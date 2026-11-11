@@ -167,8 +167,6 @@ export function errorHandler(error: unknown, _req: Request, res: Response, _next
 
 ## JSON Error Response Format
 
-All API errors return consistent JSON:
-
 ```json
 {
   "error": {
