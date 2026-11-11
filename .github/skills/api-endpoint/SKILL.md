@@ -461,7 +461,7 @@ When creating a new API endpoint, ensure you complete ALL steps:
 - [ ] **Route** (`api/src/routes/{entity}.ts`) - Express handlers + Swagger docs
 - [ ] **Register** (`api/src/index.ts`) - Add route to Express app
 - [ ] **Migration** (`api/database/migrations/{NNN}_{description}.sql`) - CREATE TABLE statement
-- [ ] **Seed Data** (`api/sql/seed/{NNN}_{entity_names}.sql`) - 3-5 realistic examples
+- [ ] **Seed Data** (`api/database/seed/{NNN}_{entity_names}.sql`) - 3-5 realistic examples
 - [ ] **Unit Tests** (`api/src/repositories/{entity}sRepo.test.ts`) - All CRUD operations, edge cases, errors
 - [ ] **Route Tests** (`api/src/routes/{entity}.test.ts`) - Integration tests for HTTP endpoints
 
