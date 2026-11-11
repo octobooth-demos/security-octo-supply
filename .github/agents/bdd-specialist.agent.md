@@ -282,7 +282,7 @@ npm run test:e2e
 3. The root `make test-e2e` command handles server startup automatically
 
 **Dependencies**:
-- `@playwright/test: ^1.49.0` in `frontend/package.json`
+- `@playwright/test: ^1.60.0` in `frontend/package.json`
 - Browsers installed via: `npx playwright install chromium msedge`
 
 ### Reference File Structure
