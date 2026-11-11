@@ -70,7 +70,7 @@ describe('[Entity] API', () => {
 npm --prefix api test -- --run
 
 # Run tests with coverage
-npm run test:api -- -- --coverage
+npm --prefix api run test:coverage
 
 # Run specific test file
 npm run test:api -- src/routes/product.test.ts
