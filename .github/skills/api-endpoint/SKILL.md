@@ -357,7 +357,7 @@ See `references/database-conventions.md` for migration file conventions.
 **Seed file naming convention:**
 - Use the next sequential number (e.g., `005_categories.sql`)
 - Use snake_case plural entity name
-- Place in `api/sql/seed/` directory
+- Place in `api/database/seed/` directory
 
 **Seed data best practices:**
 ```sql
