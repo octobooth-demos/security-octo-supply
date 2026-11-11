@@ -136,7 +136,7 @@ export class ThingRepository {
 router.get('/:id', async (req, res, next) => {
   try {
     const thing = await repository.getById(Number(req.params.id));
-    if (!thing) throw new NotFoundError('Thing not found');
+    if (!thing) throw new NotFoundError('Thing', Number(req.params.id));
     res.json(thing);
   } catch (error) {
     next(error);
