@@ -36,7 +36,7 @@ Use the provided cart design image (../../docs/design/cart.png) as the visual re
 
 ### Frontend Architecture and Building
 - Refer to the existing Architecture Doc (../../docs/architecture.md) for frontend structure
-- Refere to the Building Doc (../docs/building.md) for build instructions
+- Refere to the Building Doc (../../docs/build.md) for build instructions
 
 ### Implementation Specifications
 1. **Cart Context**: Create a CartContext to manage cart state globally
