@@ -407,7 +407,7 @@ export default defineConfig({
   webServer:
     process.env.PLAYWRIGHT_WEB_SERVER !== 'false'
       ? {
-          command: 'npm run dev',
+          command: 'cd .. && make dev',
           port: 5137,
           reuseExistingServer: !process.env.CI,
           timeout: 120_000,
