@@ -277,7 +277,7 @@ npm run test:e2e
 ```
 
 **Important Setup Notes**:
-1. Database must be seeded before tests run (`npm run db:seed`)
+1. Database must be seeded before tests run (`npm --prefix api run db:seed:dev`)
 2. Both API (port 3000) and frontend (port 5137) must be running
 3. The root `test:e2e` command handles server startup automatically
 4. Tests wait 10 seconds for servers to initialize
