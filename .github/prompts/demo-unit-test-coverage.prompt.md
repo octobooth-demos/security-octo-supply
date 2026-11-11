@@ -73,7 +73,7 @@ npm --prefix api test -- --run
 npm --prefix api run test:coverage
 
 # Run specific test file
-npm run test:api -- src/routes/product.test.ts
+npm --prefix api test -- --run src/routes/product.test.ts
 ```
 
 
