@@ -306,9 +306,6 @@ api/
 │   └── routes/                       # API endpoints for test data setup
 └── database/
     └── seed/                         # Database seed data
-
-Root:
-└── package.json                      # test:e2e command
 ```
 
 ## Coverage Matrix Examples
