@@ -42,7 +42,6 @@ You specialize in:
    - Implement repository methods
    - Generate Express.js routes
    - Add unit tests
-   - Generate Swagger docs
 
 2. **Code Quality Focus**
    - Parameterized SQL (no concatenation)
