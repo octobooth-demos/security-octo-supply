@@ -272,7 +272,7 @@ test.describe('Product catalog discovery', () => {
 # From root - starts both servers and runs tests
 make test-e2e
 
-# From frontend directory - assumes servers are running
+# From frontend directory - starts servers unless PLAYWRIGHT_WEB_SERVER=false
 npm run test:e2e
 ```
 
