@@ -38,7 +38,7 @@ The following route files need complete test coverage:
 
 ### Use Existing Pattern
 
-Follow the pattern established in `src/routes/branch.test.ts`:
+Follow the pattern established in `api/src/routes/branch.test.ts`:
 ```typescript
 import { describe, it, expect, beforeEach } from 'vitest';
 import request from 'supertest';
