@@ -53,11 +53,10 @@ CREATE INDEX IF NOT EXISTS idx_inventory_branch ON inventory(branch_id);
 
 ### Key Conventions
 
-1. **Always use IF NOT EXISTS** - Makes migrations idempotent
-2. **INTEGER PRIMARY KEY AUTOINCREMENT** - Standard for auto-incrementing IDs
-3. **Foreign keys** - Always define with REFERENCES clause
-4. **Indexes** - Create for foreign keys and frequently queried columns
-5. **Defaults** - Use SQLite functions like `datetime('now')` for timestamps
+1. **INTEGER PRIMARY KEY AUTOINCREMENT** - Standard for auto-incrementing IDs
+2. **Foreign keys** - Always define with REFERENCES clause
+3. **Indexes** - Create for foreign keys and frequently queried columns
+4. **Defaults** - Use SQLite functions like `datetime('now')` for timestamps
 
 ## Column Naming
 
